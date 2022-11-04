@@ -38,7 +38,7 @@ public class MainController {
 
     @GetMapping("/hola4")
     public ResponseEntity<String> hola4() {
-        return ResponseEntity.status(HttpStatus.OK).body("HOLA DESDE EL RESPONSE ENTITY");
+        return ResponseEntity.status(HttpStatus.OK).body("Hola desde el Response Entity");
     }
 
     @PostMapping("/persona")
