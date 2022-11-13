@@ -1,4 +1,4 @@
-package com.primerdesafio.demo.model;
+package com.primerdesafio.demo.model.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,11 +8,12 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Persona {
 
-    String nombre;
-    String apellido;
+    private String nombre;
+    private String apellido;
 
     @Override
     public String toString() {
         return nombre + " " + apellido;
     }
+    
 }

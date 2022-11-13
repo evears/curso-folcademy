@@ -1,18 +1,18 @@
-package com.primerdesafio.demo.controller;
+package com.primerdesafio.demo.controllers;
 
-import com.primerdesafio.demo.model.Persona;
+import com.primerdesafio.demo.model.entities.Persona;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class MainController {
+public class Desafio1Controller {
 
     // consignas desafio
     @GetMapping("/hello")
-   public String hello() {
+    public String hello() {
         return "Hola! Mi nombre es Evelyn Arias y esta es mi primera API";
-   }
+    }
 
     @PostMapping("/goodbye")
     public String goodbye() {
@@ -20,10 +20,9 @@ public class MainController {
     }
 
     // extras
-
     @GetMapping("/hola1")
     public String hola1(@RequestParam String nombre) {
-        return "Hola! Mi nombre es " + nombre ;
+        return "Hola! Mi nombre es " + nombre;
     }
 
     @GetMapping("/hola2/{nombre}")
@@ -46,6 +45,5 @@ public class MainController {
         Persona p1 = new Persona(persona.getNombre(), persona.getApellido());
         return p1.toString();
     }
-
 
 }
