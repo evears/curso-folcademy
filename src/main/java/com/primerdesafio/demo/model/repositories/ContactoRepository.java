@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContactoRepository extends JpaRepository<Contacto, Integer> {
+    public boolean existsByNombre(String nombre);
+    public boolean existsByCelular(Integer celular);
     
 }
