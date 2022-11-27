@@ -1,8 +1,9 @@
-package com.primerdesafio.demo.controllers;
+package com.curso.demo.controllers;
 
-import com.primerdesafio.demo.model.domain.ContactoDTO;
-import com.primerdesafio.demo.model.domain.MensajeDTO;
-import com.primerdesafio.demo.services.ContactoService;
+import com.curso.demo.model.domain.contactoDTO.ContactoAddDTO;
+import com.curso.demo.model.domain.MensajeDTO;
+import com.curso.demo.model.domain.contactoDTO.ContactoReadDTO;
+import com.curso.demo.services.ContactoService;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,17 +26,17 @@ public class ContactoController {
     }
 
     @PostMapping
-    public ResponseEntity<MensajeDTO> save(@RequestBody ContactoDTO contactodto) {
+    public ResponseEntity<MensajeDTO> save(@RequestBody ContactoAddDTO contactodto) {
         return ResponseEntity.ok(contactoservice.add(contactodto));
     }
 
     @GetMapping
-    public ResponseEntity<List<ContactoDTO>> getAll() {
+    public ResponseEntity<List<ContactoReadDTO>> getAll() {
         return ResponseEntity.ok(contactoservice.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ContactoDTO> getById(@PathVariable("id") Integer id) {
+    public ResponseEntity<ContactoReadDTO> getById(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(contactoservice.findById(id));
     }
 
@@ -44,9 +45,9 @@ public class ContactoController {
         return ResponseEntity.ok(contactoservice.delete(id));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<String> update(@PathVariable("id") Integer id, @RequestBody ContactoDTO contactodto) {
-        return ResponseEntity.ok(contactoservice.update(id, contactodto));
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<String> update(@PathVariable("id") Integer id, @RequestBody ContactoAddDTO contactodto) {
+//        return ResponseEntity.ok(contactoservice.update(id, contactodto));
+//    }
 
 }

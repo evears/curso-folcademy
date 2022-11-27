@@ -1,4 +1,4 @@
-package com.primerdesafio.demo.exceptions.exceptionskinds;
+package com.curso.demo.exceptions.exceptionskinds;
 
 public class ContactoInexistenteException extends RuntimeException {
 

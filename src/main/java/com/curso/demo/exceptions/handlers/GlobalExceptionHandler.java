@@ -1,8 +1,8 @@
-package com.primerdesafio.demo.exceptions.handlers;
+package com.curso.demo.exceptions.handlers;
 
-import com.primerdesafio.demo.exceptions.dtos.ErrorMessageDTO;
-import com.primerdesafio.demo.exceptions.exceptionskinds.ContactoExistenteException;
-import com.primerdesafio.demo.exceptions.exceptionskinds.ContactoInexistenteException;
+import com.curso.demo.exceptions.dtos.ErrorMessageDTO;
+import com.curso.demo.exceptions.exceptionskinds.ContactoExistenteException;
+import com.curso.demo.exceptions.exceptionskinds.ContactoInexistenteException;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

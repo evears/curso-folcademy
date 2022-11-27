@@ -1,4 +1,4 @@
-package com.primerdesafio.demo.exceptions.dtos;
+package com.curso.demo.exceptions.dtos;
 
 import lombok.*;
 

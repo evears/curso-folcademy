@@ -1,6 +1,6 @@
-package com.primerdesafio.demo.model.repositories;
+package com.curso.demo.model.repositories;
 
-import com.primerdesafio.demo.model.entities.Contacto;
+import com.curso.demo.model.entities.Contacto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
