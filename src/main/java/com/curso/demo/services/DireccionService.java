@@ -35,10 +35,7 @@ public class DireccionService {
         return direccionrepo
                 .findAll()
                 .stream()
-                .map(direccion -> {
-                    System.out.println();
-                    return direccionmapper.direccionToDireccionReadDTO(direccion);
-                })
+                .map(direccion -> direccionmapper.direccionToDireccionReadDTO(direccion))
                 .collect(Collectors.toList());
     }
     
