@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 public class ContactoReadDTO {
     private Integer id;
     private String nombre;
-    private Integer celular;
+    private String celular;
     private DireccionReadDTO direccion;
 }

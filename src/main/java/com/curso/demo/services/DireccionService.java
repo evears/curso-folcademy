@@ -4,11 +4,14 @@ import com.curso.demo.model.domain.contactoDTO.ContactoAddDTO;
 import com.curso.demo.model.domain.contactoDTO.ContactoReadDTO;
 import com.curso.demo.model.domain.direccionDTO.DireccionAddDTO;
 import com.curso.demo.model.domain.direccionDTO.DireccionReadDTO;
+import com.curso.demo.model.domain.direccionDTO.ListaDireccionesDTO;
 import com.curso.demo.model.mappers.DireccionMapper;
 import com.curso.demo.model.repositories.DireccionRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -45,6 +48,19 @@ public class DireccionService {
                 .map(direccion -> direccionmapper.direccionToDireccionReadDTO(direccion))
                 .get();
     }
+    
+    public ListaDireccionesDTO findAllWithFilters(Integer page, Integer size, String calle, String numero) {
+        Pageable pageable = PageRequest.of(page, size);
+        return new ListaDireccionesDTO(direccionrepo
+                .findByCalleContainingAndNumeroContaining(pageable, calle, numero)
+                .stream()
+                .map(direccion -> direccionmapper.direccionToDireccionReadDTO(direccion))
+                .collect(Collectors.toList()));
+    }
+    
+
+    
+    
     
 
 }

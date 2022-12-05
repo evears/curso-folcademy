@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data @NoArgsConstructor @AllArgsConstructor 
 public class ContactoAddDTO {
     private String nombre;
-    private Integer celular;
+    private String celular;
     private DireccionAddDTO direccion;
 
 }
