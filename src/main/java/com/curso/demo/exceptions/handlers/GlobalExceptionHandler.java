@@ -30,7 +30,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorMessageDTO> badRequestExceptionHandler(HttpServletRequest req, Exception e){
         return new ResponseEntity<>(new ErrorMessageDTO(333, e.getMessage(), req.getRequestURI()), HttpStatus.BAD_REQUEST);
     }
-    
-    
+     
     
 }
