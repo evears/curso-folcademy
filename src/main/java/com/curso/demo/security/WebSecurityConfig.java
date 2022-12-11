@@ -17,19 +17,19 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @AllArgsConstructor
 public class WebSecurityConfig {
-    
+
     @Autowired
     private JWTAuthenticationEntryPoint unauthorizedHandler;
-    
+
     private final UserDetailsServiceImpl userDetailsService;
     private final JWTAuthorizationFilter jwtAuthorizationFilter;
-    
+
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authManager) throws Exception {
         JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter();
         jwtAuthenticationFilter.setAuthenticationManager(authManager);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
-        
+
         return http
                 .csrf().disable()
                 .authorizeRequests()
@@ -46,7 +46,7 @@ public class WebSecurityConfig {
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-    
+
     @Bean
     AuthenticationManager authManager(HttpSecurity http) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class)
@@ -55,15 +55,14 @@ public class WebSecurityConfig {
                 .and()
                 .build();
     }
-    
+
     @Bean
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    
+
 //    @Bean
 //    public AuthenticationFailureHandler authenticationFailureHandler() {
 //        return new CustomAuthenticationFailureHandler();
 //    }
-    
 }
