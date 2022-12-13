@@ -21,6 +21,7 @@ public class JWTAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
                         AuthenticationException authException) throws IOException {
         Map<String, Object> responseMap = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
+        
         response.setStatus(401);
         responseMap.put("mensaje", "Unauthorized");
         responseMap.put("codigo", 401);
